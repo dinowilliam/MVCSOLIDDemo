@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WilliamFerreira.Domain.Models.User>
+
+@{
+    ViewBag.Title = "Cadastro de Usuários";
+}
+
+<h2>Cadastro de Usuários</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create", "User", htmlAttributes: new { @class = "btn btn-default btn-sm" })
+</p>
+
+<div class="row align-items-center col-xs-12">
+    <div class="col-md-2">
+        @Html.Label("Sexo:");
+        @{
+            List<SelectListItem> listaSexo = new List<SelectListItem>();
+            listaSexo.Add(new SelectListItem { Text = "Masculino", Value = "Masculino" });
+            listaSexo.Add(new SelectListItem { Text = "Feminino", Value = "Feminino" });
+        }
+
+        @Html.DropDownList("ddlSexo", listaSexo, "Ambos", new { @class = "form-control" })
+    </div>
+    <div class="col-md-4">
+        @Html.Label("Email:");
+        @Html.TextBox("txtEmail", "", new { @class = "form-control", placeholder = "Email" })
+    </div>
+    <div class="col-md-4">
+        @Html.Label("Nome:");
+        @Html.TextBox("txtNome", "", new { @class = "form-control", placeholder = "Nome" })
+    </div>
+    <div class="col-md-2">
+        @Html.Label(" ")
+        <p><a id="btnPesquisar" class="form-control btn btn-primary right">Pequisar&raquo;</a></p>
+    </div>
+</div>
+
+<p></p>
+<div id="target" class="row">
+    @{
+        Html.RenderPartial("UserListPartial", ViewData.Model);
+    }
+</div>
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+
+            $("#btnPesquisar").click(function () {
+
+                var selectedSex = $("#ddlSexo option:selected").first().text();
+                var selectedEmail = $("#txtEmail").val();
+                var selectedName = $("#txtNome").val();
+
+                $.get('@Url.Action("UserListPartial")',
+                    {
+                        Sex: selectedSex,
+                        Email: selectedEmail,
+                        Name: selectedName
+                    },
+                    function (data) {
+                        $("#target").html(data);
+                 });
+            });
+        });
+
+    </script>
+
+}
+

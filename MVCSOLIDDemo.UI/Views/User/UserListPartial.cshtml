@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WilliamFerreira.Domain.Models.User>
+
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Ativo?
+        </th>
+        <th>
+            Sexo
+        </th>
+        <th>
+            Ações
+        </th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @(Convert.ToInt32(item.Active) == 0 ? "Não" : "Sim")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", "User", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default btn-sm" }) |
+                @Html.ActionLink("Detalhes", "Details", "User", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default btn-sm" }) |
+                @Html.ActionLink("Excluir", "Delete", "User", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-default btn-sm" })
+            </td>
+        </tr>
+    }
+</table>
+

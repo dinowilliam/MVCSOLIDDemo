@@ -1,0 +1,81 @@
+﻿@model WilliamFerreira.Domain.Models.User
+
+@{
+    ViewBag.Title = "Ediart";
+}
+
+<h2>Editar Usuário</h2>
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">     
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.Label("Nome", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Email", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "email@examplo.com" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Senha", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" }, placeholder = "Senha" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Ativo?", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                    List<SelectListItem> listaAtivo = new List<SelectListItem>();
+                    listaAtivo.Add(new SelectListItem { Text = "Sim", Value = "1" });
+                    listaAtivo.Add(new SelectListItem { Text = "Não", Value = "0" });
+                }
+
+                @Html.DropDownListFor(model => model.Active, listaAtivo, "-- Selecione--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Active, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Sexo", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                    List<SelectListItem> listaSexo = new List<SelectListItem>();
+                    listaSexo.Add(new SelectListItem { Text = "Masculino", Value = "Masculino" });
+                    listaSexo.Add(new SelectListItem { Text = "Feminino", Value = "Feminino" });
+                }
+
+                @Html.DropDownListFor(model => model.Sex, listaSexo, "-- Selecione--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Sex, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+                @Html.ActionLink("Voltar Para Lista", "Index", "User", htmlAttributes: new { @class = "btn btn-default btn-sm" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
