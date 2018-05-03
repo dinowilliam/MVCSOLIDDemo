@@ -1,29 +1,91 @@
-﻿using System;
+﻿using MVCSOLIDDemo.Domain.Models.Contracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace MVCSOLIDDemo.Domain.Models
-{
-    public class User
-    {
+namespace MVCSOLIDDemo.Domain.Models {
+    public class User : IUser {
+
+        private readonly ICollection<IAddress> _addresses;
+        private const int DaysInAYear = 365;
+
+        public User(string name, string surname, string email, string password, string sex, DateTime? dateOfBirth) : this() {
+            Name = name;
+            Surname = surname;
+            Email = email;
+            Password = password;
+            Sex = sex;
+            DateOfBirth = dateOfBirth;
+        }
+
+        internal User() {
+        }
+
         public Guid Id { get; set; }
 
-        [Required(ErrorMessage = "O campo Nome do Usuário é cecessário")]
+        public DateTime? CreatedAt { get; set; }
+
+        public DateTime? DisabledAt { get; set; }
+
+        public DateTime? UpdatedAt { get; set; }
+
+        public DateTime? DeletedAt { get; set; }
+
+        public Boolean IsEnabled {
+            get {
+                if (CreatedAt.HasValue && DisabledAt.HasValue == false && DeletedAt.HasValue == false) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+        public Boolean IsDeleted {
+            get {
+                if (DeletedAt.HasValue == false) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "O Email do Usuário é necessário")]
-        [DataType(DataType.EmailAddress)]
+        public string Surname { get; set; }
+
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "É necessário digitar uma Senha")]
-        [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "É necessário selecionar o Estado do Usuário")]
-        public int Active { get; set; }
-
-        [Required(ErrorMessage = "É necessário informar o Sexo do Usuário")]
         public string Sex { get; set; }
+
+        public DateTime? DateOfBirth { get; set; }
+
+        public int Age {
+            get {
+                TimeSpan Years = DateTime.Now - DateOfBirth.Value;
+                return Years.Days/DaysInAYear;
+            }
+        }
+
+        public IEnumerable<IAddress> Addresses => _addresses;
+
+        public void AddAddress(IAddress address) {
+
+        }
+
+        public void RemoveAddress(IAddress address) {
+
+        }
+
+        public void SetMainAddress(IAddress address) {
+
+        }
+
     }
 }

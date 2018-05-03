@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MVCSOLIDDemo.DAL.Contracts {
     public interface IService {
-        public int Save();
+        public int Save(class object);
 
         int Update(T);
 
