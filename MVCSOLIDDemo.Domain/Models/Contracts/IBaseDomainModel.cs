@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MVCSOLIDDemo.Domain.Models.Contracts {
-    interface IBaseDomainModel {
+    public interface IBaseDomainModel {
         Guid Id { get; set; }
         DateTime? CreatedAt { get; set; }
         DateTime? DisabledAt { get; set; }

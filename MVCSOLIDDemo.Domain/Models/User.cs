@@ -7,8 +7,10 @@ using System.Linq;
 namespace MVCSOLIDDemo.Domain.Models {
     public class User : IUser {
 
-        private readonly ICollection<IAddress> _addresses;
+      
         private const int DaysInAYear = 365;
+
+        private readonly ICollection<IAddress> _addresses;
 
         public User(string name, string surname, string email, string password, string sex, DateTime? dateOfBirth) : this() {
             Name = name;

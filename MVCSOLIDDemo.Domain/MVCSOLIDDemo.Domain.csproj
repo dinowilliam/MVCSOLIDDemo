@@ -46,6 +46,9 @@
     <Compile Include="Models\Contracts\IAgent.cs" />
     <Compile Include="Models\Contracts\IBaseDomainModel.cs" />
     <Compile Include="Models\Contracts\IUser.cs" />
+    <Compile Include="Models\Contracts\ICity.cs" />
+    <Compile Include="Models\Contracts\ICountry.cs" />
+    <Compile Include="Models\Contracts\ISubdivision.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
