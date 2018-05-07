@@ -9,7 +9,7 @@ namespace MVCSOLIDDemo.Domain.Models {
       
         private const int DaysInAYear = 365;
 
-        private readonly ICollection<IAddress> _addresses;
+        private List<IAddress> _addresses;
 
         public User(string name, string surname, string email, string password, string sex, DateTime? dateOfBirth) : this() {
             Name = name;
@@ -45,14 +45,37 @@ namespace MVCSOLIDDemo.Domain.Models {
         public IEnumerable<IAddress> Addresses => _addresses;
 
         public void AddAddress(IAddress address) {
+            
+            if(!_addresses.Contains(address)) {
+
+                _addresses.Add(address);
+
+            }
 
         }
 
         public void RemoveAddress(IAddress address) {
+            
+            if(_addresses.Contains(address)){
+
+                _addresses.Remove(address);
+
+            }
 
         }
 
         public void SetMainAddress(IAddress address) {
+
+            if(_addresses.Contains(address)){                       
+                
+                _addresses.Remove(address);
+
+                _addresses = _addresses.ForEach(a => { a.AddressStatus = AddressStatus.NormalAddress });                                
+                
+                address.AddressStatus = AddressStatus.MainAddress;
+                _addresses.Add(address);
+
+            }
 
         }
 

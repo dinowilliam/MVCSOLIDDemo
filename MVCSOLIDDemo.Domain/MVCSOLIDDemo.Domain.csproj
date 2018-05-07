@@ -45,6 +45,7 @@
     <Compile Include="Models\Agent.cs" />
     <Compile Include="Models\BaseDomainModel.cs" />
     <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Contracts\AddressStatus.cs" />
     <Compile Include="Models\Contracts\IAddress.cs" />
     <Compile Include="Models\Contracts\IAgent.cs" />
     <Compile Include="Models\Contracts\IBaseDomainModel.cs" />

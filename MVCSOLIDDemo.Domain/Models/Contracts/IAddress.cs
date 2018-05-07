@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace MVCSOLIDDemo.Domain.Models.Contracts {
 
-namespace MVCSOLIDDemo.Domain.Models.Contracts {
     public interface IAddress : IBaseDomainModel {
 
         string AddressDescription { get; set; }
@@ -19,7 +14,10 @@ namespace MVCSOLIDDemo.Domain.Models.Contracts {
 
         ICity City { get; }
 
+        AddressStatus AddressStatus { get; set; }
+
         void SetCity(ICity city);
 
     }
+
 }
