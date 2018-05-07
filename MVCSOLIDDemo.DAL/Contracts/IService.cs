@@ -6,18 +6,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MVCSOLIDDemo.DAL.Contracts {
-    public interface IService {
-        public int Save(class object);
 
-        int Update(T);
+    public interface IService<T> where T : class  {
+
+        int Save(T model);
+
+        int Update(T model);
 
         int Delete(object id);
        
-       T GetAll();
+        IEnumerable<T> GetAll();
 
         T GetById(object id);
 
-        public IEnumerable<T> UserFilter(string sex, string email, string name);
+        IEnumerable<T> UserFilter(string sex, string email, string name);
+
     }
 
 }

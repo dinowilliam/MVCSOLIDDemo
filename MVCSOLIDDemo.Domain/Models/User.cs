@@ -70,7 +70,7 @@ namespace MVCSOLIDDemo.Domain.Models {
                 
                 _addresses.Remove(address);
 
-                _addresses = _addresses.ForEach(a => { a.AddressStatus = AddressStatus.NormalAddress });                                
+                _addresses.ForEach(a => { a.AddressStatus = AddressStatus.NormalAddress; });                                
                 
                 address.AddressStatus = AddressStatus.MainAddress;
                 _addresses.Add(address);

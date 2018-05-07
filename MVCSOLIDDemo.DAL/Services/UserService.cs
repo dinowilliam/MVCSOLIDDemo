@@ -11,7 +11,7 @@ namespace MVCSOLIDDemo.DAL.Repository {
     using Repository.Models;
     using System.Linq.Expressions;
 
-    public class UserService {
+    public class UserService : IService<Domain.Models.User> {
 
         IUnitOfWork<User> UOWUser { get; set; }
 
