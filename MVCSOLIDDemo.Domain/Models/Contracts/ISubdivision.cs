@@ -1,6 +1,7 @@
-﻿using MVCSOLIDDemo.Domain.Models.Contracts;
-
-namespace MVCSOLIDDemo.Domain.Models {
+﻿namespace MVCSOLIDDemo.Domain.Models {
+    
+    using MVCSOLIDDemo.Domain.Models.Contracts;
+    
     public interface ISubdivision : IBaseDomainModel {
 
         ICountry Country { get; set; }
@@ -17,6 +18,7 @@ namespace MVCSOLIDDemo.Domain.Models {
 }
 
 namespace MVCSOLIDDemo.Domain.Models.Contracts {
+   
     public enum SubdivisionCategory {
 
         FederalDistric = 0,

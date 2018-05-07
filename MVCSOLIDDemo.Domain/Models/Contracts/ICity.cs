@@ -1,6 +1,7 @@
-﻿using MVCSOLIDDemo.Domain.Models.Contracts;
+﻿namespace MVCSOLIDDemo.Domain.Models {
+    
+    using MVCSOLIDDemo.Domain.Models.Contracts;
 
-namespace MVCSOLIDDemo.Domain.Models {
     public interface ICity : IBaseDomainModel {
 
         ISubdivision Subdivision { get; set; }

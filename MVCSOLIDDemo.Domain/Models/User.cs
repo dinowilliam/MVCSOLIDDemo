@@ -1,13 +1,11 @@
-﻿using MVCSOLIDDemo.Domain.Models.Contracts;
-namespace MVCSOLIDDemo.Domain.Notification;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
 
 namespace MVCSOLIDDemo.Domain.Models {
-    public class User : Notification, IUser {
 
+    using MVCSOLIDDemo.Domain.Models.Contracts;
+
+    public class User : Agent, IUser  {
       
         private const int DaysInAYear = 365;
 
@@ -23,39 +21,7 @@ namespace MVCSOLIDDemo.Domain.Models {
         }
 
         internal User() {
-        }
-
-        public Guid Id { get; set; }
-
-        public DateTime? CreatedAt { get; set; }
-
-        public DateTime? DisabledAt { get; set; }
-
-        public DateTime? UpdatedAt { get; set; }
-
-        public DateTime? DeletedAt { get; set; }
-
-        public Boolean IsEnabled {
-            get {
-                if (CreatedAt.HasValue && DisabledAt.HasValue == false && DeletedAt.HasValue == false) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-        }
-
-        public Boolean IsDeleted {
-            get {
-                if (DeletedAt.HasValue == false) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-        }
+        }       
 
         public string Name { get; set; }
 
@@ -71,8 +37,8 @@ namespace MVCSOLIDDemo.Domain.Models {
 
         public int Age {
             get {
-                TimeSpan Years = DateTime.Now - DateOfBirth.Value;
-                return Years.Days/DaysInAYear;
+                TimeSpan Period = DateTime.Now - DateOfBirth.Value;
+                return Period.Days/DaysInAYear;
             }
         }
 
