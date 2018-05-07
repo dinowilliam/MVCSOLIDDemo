@@ -4,13 +4,15 @@
 
     class Subdivision : BaseDomainModel, ISubdivision {
 
-        public ICountry Country { get; set; }
+        private readonly ICountry _country;
 
         public string Code { get; set; }
 
         public string Name { get; set; }
 
         public SubdivisionCategory Category { get; set; }
+
+        public ICountry Country => _country;
 
         public void SetCountry(ICountry country) { 
         

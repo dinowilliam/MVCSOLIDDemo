@@ -4,7 +4,7 @@
 
     public interface ICity : IBaseDomainModel {
 
-        ISubdivision Subdivision { get; set; }
+        ISubdivision Subdivision { get; }
 
         string Code { get; set; }
 

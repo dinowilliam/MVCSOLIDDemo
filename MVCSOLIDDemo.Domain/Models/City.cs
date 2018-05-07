@@ -2,11 +2,13 @@
 {
     class City : BaseDomainModel, ICity {
 
-        public ISubdivision Subdivision { get; set; }
-
+        private readonly ISubdivision _subdivision;      
+        
         public string Code { get; set; }
 
         public string Name { get; set; }
+
+        public ISubdivision Subdivision => _subdivision;  
 
         public void SetSubdivision(ISubdivision subdivision) { 
         

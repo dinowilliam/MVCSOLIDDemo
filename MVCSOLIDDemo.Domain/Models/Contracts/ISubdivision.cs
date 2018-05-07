@@ -4,7 +4,7 @@
     
     public interface ISubdivision : IBaseDomainModel {
 
-        ICountry Country { get; set; }
+        ICountry Country { get; }
 
         string Code { get; set; }
 
@@ -17,13 +17,3 @@
     }
 }
 
-namespace MVCSOLIDDemo.Domain.Models.Contracts {
-   
-    public enum SubdivisionCategory {
-
-        FederalDistric = 0,
-        State = 1,
-        Province = 2
-
-    }
-}
