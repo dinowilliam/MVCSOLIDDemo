@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace MVCSOLIDDemo.Domain.Models {
 
     using MVCSOLIDDemo.Domain.Models.Contracts;
+    using System.Linq;
 
     public class User : Agent, IUser  {
       
@@ -11,13 +12,15 @@ namespace MVCSOLIDDemo.Domain.Models {
 
         private List<IAddress> _addresses;
 
-        public User(string name, string surname, string email, string password, string sex, DateTime? dateOfBirth) : this() {
+        public User(string name, string surname, string email, string password, string gender, DateTime? dateOfBirth, List<IAddress> addresses) : this() {
             Name = name;
             Surname = surname;
             Email = email;
             Password = password;
-            Sex = sex;
+            Gender = gender;
             DateOfBirth = dateOfBirth;
+
+            SetAddresses(addresses);
         }
 
         internal User() {
@@ -31,20 +34,24 @@ namespace MVCSOLIDDemo.Domain.Models {
 
         public string Password { get; set; }
 
-        public string Sex { get; set; }
+        public string Gender { get; set; }
 
         public DateTime? DateOfBirth { get; set; }
 
         public int Age {
+
             get {
                 TimeSpan Period = DateTime.Now - DateOfBirth.Value;
                 return Period.Days/DaysInAYear;
             }
+
         }
 
         public IEnumerable<IAddress> Addresses => _addresses;
 
-        internal void SetAddresses(List<IAddress> addresses) {
+        private void SetAddresses(List<IAddress> addresses) {
+
+            _addresses = _addresses != null ? _addresses : new List<Address>().ToList<IAddress>();
 
             if(!_addresses.Equals(addresses)) {
                 
