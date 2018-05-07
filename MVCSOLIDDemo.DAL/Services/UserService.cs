@@ -1,15 +1,11 @@
-﻿using MVCSOLIDDemo.DAL.Infra;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using MVCSOLIDDemo.Domain.Models;
 
-namespace MVCSOLIDDemo.DAL.Repository {
+namespace MVCSOLIDDemo.DAL.Repository
+{
     using MVCSOLIDDemo.DAL.Contracts;
     using Nelibur.ObjectMapper;
     using Repository.Models;
-    using System.Linq.Expressions;
 
     public class UserService : IService<Domain.Models.User> {
 

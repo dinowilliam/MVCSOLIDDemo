@@ -44,6 +44,16 @@ namespace MVCSOLIDDemo.Domain.Models {
 
         public IEnumerable<IAddress> Addresses => _addresses;
 
+        internal void SetAddresses(List<IAddress> addresses) {
+
+            if(!_addresses.Equals(addresses)) {
+                
+                _addresses = addresses;
+                
+            }
+        
+        }
+
         public void AddAddress(IAddress address) {
             
             if(!_addresses.Contains(address)) {
