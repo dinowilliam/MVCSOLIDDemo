@@ -15,17 +15,9 @@ namespace MVCSOLIDDemo.Domain.Models.Contracts {
 
         string PostalCode { get; set; }
 
-        string PostBox { get; set; }
-
-        ICountry Country { get; }
-
-        ISubdivision Subdivision { get; }
+        string PostBox { get; set; }    
 
         ICity City { get; }
-
-        void SetCountry(ICountry country);
-
-        void SetSudivison(ISubdivision subdivision);
 
         void SetCity(ICity city);
 

@@ -50,6 +50,11 @@
     <Compile Include="Models\Contracts\ICountry.cs" />
     <Compile Include="Models\Contracts\ISubdivision.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Notification\Contracts\INotification.cs" />
+    <Compile Include="Notification\Contracts\INotificationItem.cs" />
+    <Compile Include="Notification\Contracts\NotificationType.cs" />
+    <Compile Include="Notification\Notification.cs" />
+    <Compile Include="Notification\NotificationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

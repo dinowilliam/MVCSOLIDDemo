@@ -8,10 +8,6 @@ using System.Threading.Tasks;
 namespace MVCSOLIDDemo.Domain.Models {
     class Address : IAddress {
 
-        private readonly ICountry _country;
-
-        private readonly ISubdivision _subdivision;
-
         private readonly ICity _city;
 
         public Guid Id { get; set; }
@@ -54,21 +50,9 @@ namespace MVCSOLIDDemo.Domain.Models {
 
         public string PostalCode  { get; set; }
 
-        public string PostBox { get; set; }
+        public string PostBox { get; set; }      
 
-        public ICountry Country => _country;
-
-        public ISubdivision Subdivision => _subdivision;
-
-        public ICity City => _city;
-
-        public void SetCountry(ICountry country) {
-
-        }
-
-        public void SetSudivison(ISubdivision subdivision) {
-
-        }
+        public ICity City => _city;       
 
         public void SetCity(ICity city) {
 

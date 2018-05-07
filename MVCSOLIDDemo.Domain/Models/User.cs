@@ -1,11 +1,12 @@
 ﻿using MVCSOLIDDemo.Domain.Models.Contracts;
+namespace MVCSOLIDDemo.Domain.Notification;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace MVCSOLIDDemo.Domain.Models {
-    public class User : IUser {
+    public class User : Notification, IUser {
 
       
         private const int DaysInAYear = 365;
