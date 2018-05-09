@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\UserBusiness.cs" />
+    <Compile Include="ApplicationStart.cs" />
+    <Compile Include="Containers\AppContainer.cs" />
+    <Compile Include="Containers\Contracts\IAppContainer.cs" />
+    <Compile Include="Server\AppServer.cs" />
+    <Compile Include="Server\Contracts\IAppServer.cs" />
+    <Compile Include="Services\UserBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,7 +60,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Contracts\" />
+    <Folder Include="Services\Contracts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

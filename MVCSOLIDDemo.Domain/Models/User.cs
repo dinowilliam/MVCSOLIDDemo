@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MVCSOLIDDemo.Domain.Models {
 
-    using MVCSOLIDDemo.Domain.Models.Contracts;
-    using System.Linq;
+    using MVCSOLIDDemo.Domain.Models.Contracts;   
 
     public class User : Agent, IUser  {
       

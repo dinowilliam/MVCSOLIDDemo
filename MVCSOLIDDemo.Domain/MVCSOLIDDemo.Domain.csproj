@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Factories\Contracts\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MVCSOLIDDemo.Utils\MVCSOLIDDemo.Utils.csproj">
