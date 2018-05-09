@@ -8,10 +8,12 @@ using MVCSOLIDDemo.DAL.Repository;
 using MVCSOLIDDemo.Domain.Models;
 
 namespace MVCSOLIDDemo.Application.Business {
-    public class UserBusiness {
+   
+    public class UserAppService {
+
         UserService userService { get; set; }
 
-        public UserBusiness() {
+        public UserAppService() {
             this.userService = new UserService();
         }
 

@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationStart.cs" />
+    <Compile Include="ApplicationStartup.cs" />
     <Compile Include="Containers\AppServiceContainer.cs" />
     <Compile Include="Containers\Contracts\IAppServiceContainer.cs" />
     <Compile Include="Server\AppServer.cs" />
     <Compile Include="Server\Contracts\IAppServer.cs" />
-    <Compile Include="Services\Contracts\IAppServiceBase.cs" />
-    <Compile Include="Services\UserBusiness.cs" />
+    <Compile Include="Server\Contracts\IOrchestrator.cs" />
+    <Compile Include="Server\Orchestrator.cs" />
+    <Compile Include="Services\Contracts\IAppBaseService.cs" />
+    <Compile Include="Services\UserAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +62,8 @@
       <Name>MVCSOLIDDemo.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Factories\Contracts\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCSOLIDDemo.Application
 {
-    class ApplicationStart
+    class ApplicationStartup
     {
     }
 }

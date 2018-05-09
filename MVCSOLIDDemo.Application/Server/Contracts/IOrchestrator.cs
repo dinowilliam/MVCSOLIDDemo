@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVCSOLIDDemo.Application.Services.Contracts
+namespace MVCSOLIDDemo.Application.Server.Contracts
 {
-    interface IAppServiceBase
+    interface IOrchestrator
     {
     }
 }
