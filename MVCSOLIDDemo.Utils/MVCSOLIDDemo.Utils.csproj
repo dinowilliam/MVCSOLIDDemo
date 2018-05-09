@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\IO\IOHelper.cs" />
+    <Compile Include="Helpers\Web\WebHelper.cs" />
+    <Compile Include="Helpers\WSC\WSCHelper.cs" />
     <Compile Include="Notification\Contracts\INotification.cs" />
     <Compile Include="Notification\Contracts\INotificationItem.cs" />
     <Compile Include="Notification\Contracts\NotificationType.cs" />
