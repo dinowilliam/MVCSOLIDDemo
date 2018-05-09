@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MVCSOLIDDemo.DAL.Repository;
 using MVCSOLIDDemo.Domain.Models;
 
-namespace MVCSOLIDDemo.BLL.Business {
+namespace MVCSOLIDDemo.Application.Business {
     public class UserBusiness {
         UserService userService { get; set; }
 

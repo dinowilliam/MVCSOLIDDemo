@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCSOLIDDemo.Domain.Models;
-using MVCSOLIDDemo.BLL.Business;
+using MVCSOLIDDemo.Application.Business;
 
 namespace MVCSOLIDDemo.UI.Controllers {
     public class UserController : Controller {
@@ -23,11 +23,12 @@ namespace MVCSOLIDDemo.UI.Controllers {
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = UserManager.GetById(id);
-            if (user == null) {
-                return HttpNotFound();
-            }
-            return View(user);
+            //User user = UserManager.GetById(id);
+            //if (user == null) {
+            //    return HttpNotFound();
+            //}
+            //return View(user);
+            return View();
         }
 
         // GET: User/Create
@@ -44,7 +45,7 @@ namespace MVCSOLIDDemo.UI.Controllers {
             if (ModelState.IsValid) {
                 user.Id = Guid.NewGuid();
 
-                UserManager.Save(user);
+               //UserManager.Save(user);
 
                 return RedirectToAction("Index");
             }
@@ -57,12 +58,13 @@ namespace MVCSOLIDDemo.UI.Controllers {
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = UserManager.GetById(id);
+            //User user = UserManager.GetById(id);
 
-            if (user == null) {
-                return HttpNotFound();
-            }
-            return View(user);
+            //if (user == null) {
+            //    return HttpNotFound();
+            //}
+            //return View(user);
+            return View();
         }
 
         // POST: User/Edit/5
@@ -72,7 +74,7 @@ namespace MVCSOLIDDemo.UI.Controllers {
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Email,Password,Active,Sex")] User user) {
             if (ModelState.IsValid) {
-                UserManager.Update(user);
+                //UserManager.Update(user);
 
                 return RedirectToAction("Index");
             }
@@ -84,12 +86,13 @@ namespace MVCSOLIDDemo.UI.Controllers {
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = UserManager.GetById(id);
+            //User user = UserManager.GetById(id);
 
-            if (user == null) {
-                return HttpNotFound();
-            }
-            return View(user);
+            //if (user == null) {
+            //    return HttpNotFound();
+            //}
+            //return View(user);
+            return View();
         }
 
         // POST: User/Delete/5
@@ -97,7 +100,7 @@ namespace MVCSOLIDDemo.UI.Controllers {
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id) {
             
-            UserManager.Delete(id);
+            //UserManager.Delete(id);
 
             return RedirectToAction("Index");
         }

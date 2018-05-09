@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MVCSOLIDDemo.Domain.Notification {
+namespace MVCSOLIDDemo.Utils.Notification {
 
-    using MVCSOLIDDemo.Domain.Notification.Contracts;
+    using MVCSOLIDDemo.Utils.Notification.Contracts;
 
     public class Notification : INotification {
 

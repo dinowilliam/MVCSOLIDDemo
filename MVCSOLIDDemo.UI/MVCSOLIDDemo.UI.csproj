@@ -256,9 +256,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MVCSOLIDDemo.BLL\MVCSOLIDDemo.BLL.csproj">
+    <ProjectReference Include="..\MVCSOLIDDemo.Application\MVCSOLIDDemo.Application.csproj">
       <Project>{031ba9fb-e6f5-449d-9c81-bc0abf87cdb7}</Project>
-      <Name>MVCSOLIDDemo.BLL</Name>
+      <Name>MVCSOLIDDemo.Application</Name>
     </ProjectReference>
     <ProjectReference Include="..\MVCSOLIDDemo.Domain\MVCSOLIDDemo.Domain.csproj">
       <Project>{857c25c1-762f-4cea-9118-9d44e6144b87}</Project>

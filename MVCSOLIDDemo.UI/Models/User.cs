@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace MVCSOLIDDemo.Domain.Models
+namespace MVCSOLIDDemo.UI.Models
 {
     public class User
     {
@@ -25,5 +25,6 @@ namespace MVCSOLIDDemo.Domain.Models
 
         [Required(ErrorMessage = "É necessário informar o Sexo do Usuário")]
         public string Sex { get; set; }
+
     }
 }

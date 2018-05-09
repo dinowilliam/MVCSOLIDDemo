@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace WilliamFerreira.UI
+namespace MVCSOLIDDemo.UI
 {
     public class RouteConfig
     {
