@@ -9,7 +9,7 @@ namespace MVCSOLIDDemo.Application.Containers
 {
     using MVCSOLIDDemo.Application.Containers.Contracts;
 
-    class AppContainer : IAppContainer
+    class AppServiceContainer : IAppServiceContainer
     {
     }
 }

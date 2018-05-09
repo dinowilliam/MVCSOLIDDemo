@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCSOLIDDemo.Application.Containers.Contracts
 {
-    interface IAppContainer
+    interface IAppServiceContainer
     {
     }
 }
