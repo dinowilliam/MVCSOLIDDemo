@@ -3,7 +3,7 @@
 namespace MVCSOLIDDemo.Domain.Models {
 
     using MVCSOLIDDemo.Domain.Models.Contracts;
-    using MVCSOLIDDemo.Domain.Notification.Contracts;
+    using MVCSOLIDDemo.Utils.Notification.Contracts;
 
     public abstract class BaseDomainModel : IBaseDomainModel {
 

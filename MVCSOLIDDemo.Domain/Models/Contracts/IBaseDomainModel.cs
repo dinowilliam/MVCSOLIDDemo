@@ -2,7 +2,7 @@
 
 namespace MVCSOLIDDemo.Domain.Models.Contracts {
 
-    using MVCSOLIDDemo.Domain.Notification.Contracts;
+    using MVCSOLIDDemo.Utils.Notification.Contracts;
 
     public interface IBaseDomainModel {
 

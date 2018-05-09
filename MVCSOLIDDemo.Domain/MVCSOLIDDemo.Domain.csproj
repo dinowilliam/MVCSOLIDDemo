@@ -57,15 +57,16 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Subdivision.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Notification\Contracts\INotification.cs" />
-    <Compile Include="Notification\Contracts\INotificationItem.cs" />
-    <Compile Include="Notification\Contracts\NotificationType.cs" />
-    <Compile Include="Notification\Notification.cs" />
-    <Compile Include="Notification\NotificationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Factories\" />
+    <Folder Include="Factories\Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVCSOLIDDemo.Utils\MVCSOLIDDemo.Utils.csproj">
+      <Project>{77eab618-d24d-43b8-af8d-46109a6cda9b}</Project>
+      <Name>MVCSOLIDDemo.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
