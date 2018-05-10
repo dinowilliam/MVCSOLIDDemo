@@ -20,14 +20,17 @@ namespace MVCSOLIDDemo.UI.Controllers {
 
         // GET: User/Details/5
         public ActionResult Details(Guid? id) {
+
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             //User user = UserManager.GetById(id);
             //if (user == null) {
             //    return HttpNotFound();
             //}
             //return View(user);
+
             return View();
         }
 
@@ -55,15 +58,18 @@ namespace MVCSOLIDDemo.UI.Controllers {
 
         // GET: User/Edit/5
         public ActionResult Edit(Guid? id) {
+            
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             //User user = UserManager.GetById(id);
 
             //if (user == null) {
             //    return HttpNotFound();
             //}
             //return View(user);
+
             return View();
         }
 
