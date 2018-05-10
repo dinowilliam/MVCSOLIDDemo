@@ -46,6 +46,12 @@
     <Compile Include="Containers\Contracts\IAppServiceContainer.cs" />
     <Compile Include="Factories\BaseAppFactory.cs" />
     <Compile Include="Factories\Contracts\IBaseAppFactory.cs" />
+    <Compile Include="Hubs\BaseServiceHub.cs" />
+    <Compile Include="Hubs\Contracts\IBaseServiceHub.cs" />
+    <Compile Include="Server\AppServer.cs" />
+    <Compile Include="Server\Contracts\IAppServer.cs" />
+    <Compile Include="Server\Contracts\IOrchestrator.cs" />
+    <Compile Include="Server\Orchestrator.cs" />
     <Compile Include="Services\Contracts\IAppBaseService.cs" />
     <Compile Include="Services\UserAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
