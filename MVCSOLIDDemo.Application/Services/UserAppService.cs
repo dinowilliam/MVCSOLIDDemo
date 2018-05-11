@@ -13,33 +13,33 @@ namespace MVCSOLIDDemo.Application.Business {
 
         UserService userService { get; set; }
 
-        public UserAppService() {
-            this.userService = new UserService();
-        }
+        //public UserAppService() {
+        //    this.userService = new UserService();
+        //}
 
-        public int Save(User user) {           
-            return userService.Save(user);
-        }
+        //public int Save(User user) {           
+        //    return userService.Save(user);
+        //}
 
-        public int Update(User user) {
-            return userService.Update(user);
-        }
+        //public int Update(User user) {
+        //    return userService.Update(user);
+        //}
 
-        public int Delete(object id) {
-            return userService.Delete(id);
-        }
+        //public int Delete(object id) {
+        //    return userService.Delete(id);
+        //}
 
-        public IEnumerable<User> GetAll() {
-            return userService.GetAll();
-        }
+        //public IEnumerable<User> GetAll() {
+        //    return userService.GetAll();
+        //}
 
-        public User GetById(object id) {
-            return userService.GetById(id);
-        }
+        //public User GetById(object id) {
+        //    return userService.GetById(id);
+        //}
 
-        public IEnumerable<User> UserFilter(string sex, string email, string name) {
+        //public IEnumerable<User> UserFilter(string sex, string email, string name) {
 
-            return userService.UserFilter(sex, email, name);
-        }
+        //    return userService.UserFilter(sex, email, name);
+        //}
     }
 }

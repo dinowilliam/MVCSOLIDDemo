@@ -11,11 +11,12 @@ using MVCSOLIDDemo.Application.Business;
 
 namespace MVCSOLIDDemo.UI.Controllers {
     public class UserController : Controller {
-        private UserBusiness UserManager = new UserBusiness();
+        //private UserBusiness UserManager = new UserBusiness();
 
         // GET: User
         public ActionResult Index() {
-            return View(UserManager.GetAll());
+            //return View(UserManager.GetAll());
+            return View();
         }
 
         // GET: User/Details/5
@@ -115,7 +116,8 @@ namespace MVCSOLIDDemo.UI.Controllers {
 
             Sex = (Sex == "Ambos" ? "" : Sex);
 
-            return PartialView(UserManager.UserFilter(Sex, Email, Name));
+            //return PartialView(UserManager.UserFilter(Sex, Email, Name));
+            return PartialView();
         }
 
         protected override void Dispose(bool disposing) {

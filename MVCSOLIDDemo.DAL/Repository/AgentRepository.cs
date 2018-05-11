@@ -7,8 +7,9 @@ using System.Web;
 namespace MVCSOLIDDemo.DAL.Repository
 {
     using MVCSOLIDDemo.DAL.Contracts;
-    using Repository.Models;
-    public class UserRepository : BaseContext<User>, IUnitOfWork<User>
+    using MVCSOLIDDemo.DAL.Repository.Entities;
+    
+    public class AgentRepository : BaseContext<Agent>, IUnitOfWork<Agent>
     {
 
     }

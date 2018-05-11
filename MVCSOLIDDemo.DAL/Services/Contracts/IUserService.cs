@@ -1,0 +1,14 @@
+﻿using MVCSOLIDDemo.DAL.Contracts;
+using MVCSOLIDDemo.DAL.DTOs;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MVCSOLIDDemo.DAL.Services.Contracts
+{
+    interface IUserService : IService<UserDTO>
+    {
+    }
+}

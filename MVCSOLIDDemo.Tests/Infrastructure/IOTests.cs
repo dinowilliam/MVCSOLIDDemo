@@ -1,11 +1,16 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace MVCSOLIDDemo.Tests {
+namespace MVCSOLIDDemo.Infrastructure.Tests
+{
     [TestClass]
-    public class UnitTest1 {
+    public class IOTests
+    {
+
         [TestMethod]
-        public void TestMethod1() {
+        public void TestMethod1()
+        {
         }
+
     }
 }

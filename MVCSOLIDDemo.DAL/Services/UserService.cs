@@ -4,29 +4,31 @@ using System.Collections.Generic;
 namespace MVCSOLIDDemo.DAL.Repository
 {
     using MVCSOLIDDemo.DAL.Contracts;
+    using MVCSOLIDDemo.DAL.DTOs;
+    using MVCSOLIDDemo.DAL.Services.Contracts;
     using Nelibur.ObjectMapper;
-    using Repository.Models;
+    using Repository.Entities;
 
-    public class UserService : IService<Domain.Models.User> {
+    public class UserService : IUserService {
 
-        IUnitOfWork<User> UOWUser { get; set; }
+        IUnitOfWork<Agent> UOWUser { get; set; }
 
-        public UserService() {
-            this.UOWUser = new UserRepository();
+        public UserService(IUnitOfWork<Agent> agentRepository) {
+            this.UOWUser =agentRepository;
         }
 
-        public int Save(Domain.Models.User user) {
+        public int Save(UserDTO user) {
 
-            TinyMapper.Bind<Domain.Models.User, User>();
-            var localUser = TinyMapper.Map<User>(user);
+            TinyMapper.Bind<UserDTO, Agent>();
+            var localUser = TinyMapper.Map<Agent>(user);
 
             return UOWUser.Save(localUser);
         }
 
-        public int Update(Domain.Models.User user) {
+        public int Update(UserDTO user) {
 
-            TinyMapper.Bind<Domain.Models.User, User>();
-            var localUser = TinyMapper.Map<User>(user);
+            TinyMapper.Bind<UserDTO, Agent>();
+            var localUser = TinyMapper.Map<Agent>(user);
 
             return UOWUser.Update(localUser);
         }
@@ -47,32 +49,32 @@ namespace MVCSOLIDDemo.DAL.Repository
             return deleteReturn;
         }
 
-        public IEnumerable<Domain.Models.User> GetAll() {
+        public IEnumerable<UserDTO> GetAll() {
 
             var localListUsers = UOWUser.GetAll();
 
-            TinyMapper.Bind<Domain.Models.User, User>();
-            var listlUsers = TinyMapper.Map<List<Domain.Models.User>>(localListUsers);
+            TinyMapper.Bind<UserDTO, Agent>();
+            var listlUsers = TinyMapper.Map<List<UserDTO>>(localListUsers);
 
             return listlUsers;
         }
 
-        public Domain.Models.User GetById(object id) {
+        public UserDTO GetById(object id) {
 
             var localUser = UOWUser.GetById(id);
 
-            TinyMapper.Bind<Domain.Models.User, User>();
-            var user = TinyMapper.Map<Domain.Models.User>(localUser);
+            TinyMapper.Bind<UserDTO, Agent>();
+            var user = TinyMapper.Map<UserDTO>(localUser);
 
             return user;
 
         }
 
-        public IEnumerable<Domain.Models.User> UserFilter(string sex, string email, string name) {
+        public IEnumerable<UserDTO> UserFilter(string sex, string email, string name) {
 
-            var localListUsers = UOWUser.Where(m => m.Sex.Contains(sex) && m.Email.Contains(email) && m.Name.Contains(name));
+            var localListUsers = UOWUser.Where(m => m.Gender.Contains(sex) && m.Email.Contains(email) && m.Name.Contains(name));
 
-            var listlUsers = TinyMapper.Map<List<Domain.Models.User>>(localListUsers);
+            var listlUsers = TinyMapper.Map<List<UserDTO>>(localListUsers);
 
             return listlUsers;
         }
