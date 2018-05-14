@@ -1,6 +1,5 @@
-﻿namespace MVCSOLIDDemo.Domain.Models
-{
-    class City : BaseDomainModel, ICity {
+﻿namespace MVCSOLIDDemo.Domain.Models {
+    public class City : BaseDomainModel, ICity {
 
         private ISubdivision _subdivision;      
 

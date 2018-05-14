@@ -51,16 +51,17 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\InterfacesTests.cs" />
-    <Compile Include="Application\ApplicationTests.cs" />
-    <Compile Include="CrossCutting\UtilsTests.cs" />
-    <Compile Include="CrossCutting\ErrorHandlingTests.cs" />
-    <Compile Include="CrossCutting\IoCTests.cs" />
-    <Compile Include="CrossCutting\CommunicationsTests.cs" />
-    <Compile Include="Domain\DomainTests.cs" />
-    <Compile Include="Infrastructure\DALTests.cs" />
-    <Compile Include="Infrastructure\WSCTests.cs" />
-    <Compile Include="Infrastructure\IOTests.cs" />
+    <Compile Include="Helpers\Domain\UserTesterHelper.cs" />
+    <Compile Include="Solution\Application\InterfacesTests.cs" />
+    <Compile Include="Solution\Application\ApplicationTests.cs" />
+    <Compile Include="Solution\CrossCutting\UtilsTests.cs" />
+    <Compile Include="Solution\CrossCutting\ErrorHandlingTests.cs" />
+    <Compile Include="Solution\CrossCutting\IoCTests.cs" />
+    <Compile Include="Solution\CrossCutting\CommunicationsTests.cs" />
+    <Compile Include="Solution\Domain\DomainTests.cs" />
+    <Compile Include="Solution\Infrastructure\DALTests.cs" />
+    <Compile Include="Solution\Infrastructure\WSCTests.cs" />
+    <Compile Include="Solution\Infrastructure\IOTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

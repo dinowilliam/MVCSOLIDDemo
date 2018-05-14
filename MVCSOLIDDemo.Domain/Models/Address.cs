@@ -2,7 +2,7 @@
 
     using MVCSOLIDDemo.Domain.Models.Contracts;
 
-    class Address : BaseDomainModel, IAddress {
+    public class Address : BaseDomainModel, IAddress {
 
         private ICity _city;      
 
