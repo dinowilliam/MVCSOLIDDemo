@@ -51,14 +51,22 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\DomainTest.cs" />
+    <Compile Include="Application\InterfacesTests.cs" />
+    <Compile Include="Application\ApplicationTests.cs" />
+    <Compile Include="CrossCutting\UtilsTests.cs" />
+    <Compile Include="CrossCutting\ErrorHandlingTests.cs" />
+    <Compile Include="CrossCutting\IoCTests.cs" />
+    <Compile Include="CrossCutting\CommunicationsTests.cs" />
+    <Compile Include="Domain\DomainTests.cs" />
     <Compile Include="Infrastructure\DALTests.cs" />
+    <Compile Include="Infrastructure\WSCTests.cs" />
     <Compile Include="Infrastructure\IOTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

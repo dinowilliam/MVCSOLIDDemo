@@ -1,12 +1,15 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace MVCSOLIDDemo.Domain.Tests {
+namespace MVCSOLIDDemo.CrossCutting.Tests
+{
     [TestClass]
-    public class DomainTest {
+    public class IoCTests
+    {
 
         [TestMethod]
-        public void TestMethod1() {
+        public void TestMethod1()
+        {
         }
 
     }
