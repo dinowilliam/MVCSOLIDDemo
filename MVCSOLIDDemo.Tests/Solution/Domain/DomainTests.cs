@@ -15,7 +15,7 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
         [TestMethod]
         public void TestDomainUserPropertieAge() {
 
-            var listAddress = A.Fake<List<IAddress>>() {  }; 
+            var listAddress = (List<IAddress>) A.CollectionOfFake<IAddress>(20);
 
             var user = new User(UserTesterHelper.Name, 
                                 UserTesterHelper.Surname, 
