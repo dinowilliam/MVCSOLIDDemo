@@ -11,7 +11,7 @@
 
         public void SetSubdivision(ISubdivision subdivision) {
 
-            if(!_subdivision.Equals(subdivision)){
+            if(_subdivision == null || !_subdivision.Equals(subdivision)){
                 
                 _subdivision = subdivision;
                 

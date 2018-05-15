@@ -22,7 +22,7 @@
 
         public void SetCity(ICity city) {
 
-            if(!_city.Equals(city)){
+            if(_city == null || !_city.Equals(city)){
 
                 _city = city;
             }

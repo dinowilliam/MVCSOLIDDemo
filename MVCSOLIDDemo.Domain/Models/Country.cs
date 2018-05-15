@@ -1,6 +1,6 @@
 ﻿namespace MVCSOLIDDemo.Domain.Models
 {
-    class Country : BaseDomainModel, ICountry    {
+    public class Country : BaseDomainModel, ICountry    {
 
         public string ISOCodeAlpha2 { get; set; }
 

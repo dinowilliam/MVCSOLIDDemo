@@ -17,11 +17,31 @@ namespace MVCSOLIDDemo.Tests.Helpers.Domain
         public static IAddress AddressExpected {
             
             get {
+                
+                 var country = new Country() {
+                    ISOCodeAlpha2 = "DC",  
+                    ISOCodeAlpha3 = "DCE",  
+                    ISOCodeNumeric = "001",
+                    ShortName = "Earth27799",
+                    LongName = "Earth 27799",
+                    Independent = false
+                  };
+
+
+                 var subdivision = new Subdivision() {
+                    Code = "0001",  
+                    Name = "Gotham"
+                  };
+
+                
+                  subdivision.SetCountry(country);
 
                  var city = new City() {
                     Code = "0001",  
                     Name = "Metropolis"
                   };
+
+                 city.SetSubdivision(subdivision);
 
                  var address = new Address() {
 

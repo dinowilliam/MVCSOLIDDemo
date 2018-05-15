@@ -2,7 +2,7 @@
 
     using MVCSOLIDDemo.Domain.Models.Contracts;
 
-    class Subdivision : BaseDomainModel, ISubdivision {
+    public class Subdivision : BaseDomainModel, ISubdivision {
         
         private ICountry _country;
         
@@ -16,7 +16,7 @@
 
         public void SetCountry(ICountry country) {
 
-            if(!_country.Equals(country)) {
+            if(_country == null || !_country.Equals(country)) {
 
                 _country = country;
 
