@@ -27,14 +27,13 @@ namespace MVCSOLIDDemo.Tests.Helpers.Domain
                     Independent = false
                   };
 
-
                  var subdivision = new Subdivision() {
                     Code = "0001",  
                     Name = "Gotham"
                   };
 
                 
-                  subdivision.SetCountry(country);
+                 subdivision.SetCountry(country);
 
                  var city = new City() {
                     Code = "0001",  
@@ -44,7 +43,6 @@ namespace MVCSOLIDDemo.Tests.Helpers.Domain
                  city.SetSubdivision(subdivision);
 
                  var address = new Address() {
-
                     AddressDescription = "Rua Ficticia",
                     Complement = "Bairro de Marduina",
                     Number = 2005,

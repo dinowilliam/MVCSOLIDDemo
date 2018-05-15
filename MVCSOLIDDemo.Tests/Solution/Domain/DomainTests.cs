@@ -1,6 +1,5 @@
 ﻿using FakeItEasy;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,7 +7,7 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
 
     using MVCSOLIDDemo.Domain.Models;
     using MVCSOLIDDemo.Domain.Models.Contracts;
-    using MVCSOLIDDemo.Tests.Helpers.Domain;    
+    using MVCSOLIDDemo.Tests.Helpers.Domain;
 
     [TestClass]
     public class DomainTests {
@@ -31,18 +30,26 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
                             UserTesterHelper.DateOfBirth, 
                             listAddressEmpty);
 
-
         }
 
         [TestMethod]
         public void TestDomainUserPropertieAge() {
 
-            TestDomainUserInit();                        
+            TestDomainUserInit();               
 
             Assert.AreEqual(user.Age, UserTesterHelper.ExpectedAge);
-
         }
 
+        [TestMethod]
+        public void TestDomainUserReadAddressList() {
+
+            TestDomainUserInit();               
+
+            A.CallTo(() => user.Addresses).Returns(listAddressFull);
+
+            Assert.IsTrue(user.Addresses.Count() == 20);
+        }
+       
         [TestMethod]
         public void TestDomainUserAddAddress() {   
             
@@ -53,7 +60,6 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
             var addressComparable = user.Addresses.ElementAt(0);
 
             Assert.AreEqual(addressComparable, expectedAddress);
-
         }
 
         [TestMethod]
@@ -65,7 +71,6 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
             user.RemoveAddress(expectedAddress);
             
             Assert.IsTrue(user.Addresses.Count()<=0);
-
         }
 
     }
