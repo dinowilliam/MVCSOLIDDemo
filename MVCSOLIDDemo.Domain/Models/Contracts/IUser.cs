@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MVCSOLIDDemo.Domain.Models.Contracts {
 
-    interface IUser : IAgent {
+    public interface IUser : IAgent {
            
         string Name { get; set; }
 

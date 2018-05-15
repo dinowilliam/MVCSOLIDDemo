@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MVCSOLIDDemo.Domain.Models.Contracts {
-    interface IAgent : IBaseDomainModel {
+    public interface IAgent : IBaseDomainModel {
       
     }
 
