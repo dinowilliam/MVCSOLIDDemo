@@ -8,8 +8,7 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests
 
     using MVCSOLIDDemo.Domain.Models;
     using MVCSOLIDDemo.Domain.Models.Contracts;
-    using MVCSOLIDDemo.Tests.Helpers.Domain;
-    using System;
+    using MVCSOLIDDemo.Tests.Helpers.Domain;    
 
     [TestClass]
     public class DomainUserTests
@@ -25,7 +24,7 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests
         {
             listAddressFull = (List<IAddress>)A.CollectionOfFake<IAddress>(20);
             listAddressEmpty = (List<IAddress>)A.CollectionOfFake<IAddress>(0);
-            expectedAddress = UserTesterHelper.AddressExpected;
+            expectedAddress = UserTesterHelper.ExpectedAddress;
 
             user = A.Fake<User>(x => x.WithArgumentsForConstructor(() => new
                             User(UserTesterHelper.Name,
