@@ -43,8 +43,9 @@ namespace MVCSOLIDDemo.Tests.Helpers.Domain
                  city.SetSubdivision(subdivision);
 
                  var address = new Address() {
-                    AddressDescription = "Rua Ficticia",
-                    Complement = "Bairro de Marduina",
+                    Description = "Rua Ficticia",
+                    Complement = "Casa I",
+                    District = "Marduina",
                     Number = 2005,
                     PostalCode = "1565236",
                     PostBox = "144545454",

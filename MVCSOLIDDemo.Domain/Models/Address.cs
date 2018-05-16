@@ -8,11 +8,13 @@
 
         public ICity City => _city;       
 
-        public string AddressDescription { get; set; }
+        public string Description { get; set; }
 
         public string Complement { get; set; }
 
-        public int Number{ get; set; }
+        public string District { get; set; }    
+
+        public int Number { get; set; }
 
         public string PostalCode  { get; set; }
 

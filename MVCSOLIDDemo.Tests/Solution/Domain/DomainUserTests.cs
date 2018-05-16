@@ -3,54 +3,70 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MVCSOLIDDemo.Solution.Domain.Tests {
+namespace MVCSOLIDDemo.Solution.Domain.Tests
+{
 
     using MVCSOLIDDemo.Domain.Models;
     using MVCSOLIDDemo.Domain.Models.Contracts;
     using MVCSOLIDDemo.Tests.Helpers.Domain;
+    using System;
 
     [TestClass]
-    public class DomainUserTests {
+    public class DomainUserTests
+    {
 
         List<IAddress> listAddressFull;
         List<IAddress> listAddressEmpty;
         IAddress expectedAddress;
-        IUser user;        
+        User user;
 
         [TestInitialize]
-        public void TestDomainUserInit() {  
+        public void TestDomainUserInit()
+        {
+            listAddressFull = (List<IAddress>)A.CollectionOfFake<IAddress>(20);
+            listAddressEmpty = (List<IAddress>)A.CollectionOfFake<IAddress>(0);
+            expectedAddress = UserTesterHelper.AddressExpected;
 
-            listAddressFull = (List<IAddress>) A.CollectionOfFake<IAddress>(20);
-            listAddressEmpty = (List<IAddress>) A.CollectionOfFake<IAddress>(0);
-            expectedAddress = UserTesterHelper.AddressExpected;        
-            
-            user = new User(UserTesterHelper.Name, 
-                            UserTesterHelper.Surname, 
-                            UserTesterHelper.Email, 
-                            UserTesterHelper.Password, 
-                            UserTesterHelper.Gender, 
-                            UserTesterHelper.DateOfBirth, 
-                            listAddressEmpty);
+            user = A.Fake<User>(x => x.WithArgumentsForConstructor(() => new
+                            User(UserTesterHelper.Name,
+                                 UserTesterHelper.Surname,
+                                 UserTesterHelper.Email,
+                                 UserTesterHelper.Password,
+                                 UserTesterHelper.Gender,
+                                 UserTesterHelper.DateOfBirth,
+                                 listAddressEmpty)
+           ));
 
         }
 
         [TestMethod]
-        public void TestDomainUserPropertieAge() {            
-
+        public void TestDomainUserPropertieAge()
+        {
             Assert.AreEqual(user.Age, UserTesterHelper.ExpectedAge);
         }
 
         [TestMethod]
-        public void TestDomainUserReadAddressList() {            
+        public void TestDomainUserReadAddressList()
+        {
 
-            A.CallTo(() => user.Addresses).Returns(listAddressFull);
+            var userFullAddress = A.Fake<User>(x => x.WithArgumentsForConstructor(() => new
+                                       User(UserTesterHelper.Name,
+                                            UserTesterHelper.Surname,
+                                            UserTesterHelper.Email,
+                                            UserTesterHelper.Password,
+                                            UserTesterHelper.Gender,
+                                            UserTesterHelper.DateOfBirth,
+                                            listAddressFull)
+            ));
 
-            Assert.IsTrue(user.Addresses.Count() == 20);
+
+            Assert.IsTrue(userFullAddress.Addresses.Count() == 20);
         }
-       
+
         [TestMethod]
-        public void TestDomainUserAddAddress() {                          
-           
+        public void TestDomainUserAddAddress()
+        {
+
             user.AddAddress(expectedAddress);
 
             var addressComparable = user.Addresses.ElementAt(0);
@@ -59,16 +75,17 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
         }
 
         [TestMethod]
-        public void TestDomainUserRemoveAddress() {                       
-
+        public void TestDomainUserRemoveAddress()
+        {
             user.AddAddress(expectedAddress);
             user.RemoveAddress(expectedAddress);
-            
-            Assert.IsTrue(user.Addresses.Count()<=0);
+
+            Assert.IsTrue(user.Addresses.Count() <= 0);
         }
 
         [TestCleanup]
-        public void TestDomainUserCleanup() { 
+        public void TestDomainUserCleanup()
+        {
 
         }
 
