@@ -7,7 +7,7 @@ namespace MVCSOLIDDemo.Utils.Notification {
 
     public class Notification : INotification {
 
-        public Notification(IList<INotificationItem> notifications) {
+        public Notification(List<INotificationItem> notifications) {
             Notifications = notifications;
         }
 

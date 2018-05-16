@@ -8,6 +8,7 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests
 
     using MVCSOLIDDemo.Domain.Models;
     using MVCSOLIDDemo.Domain.Models.Contracts;
+    using MVCSOLIDDemo.Domain.Models.Validation;
     using MVCSOLIDDemo.Tests.Helpers.Domain;    
 
     [TestClass]
@@ -58,14 +59,12 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests
                                             listAddressFull)
             ));
 
-
             Assert.IsTrue(userFullAddress.Addresses.Count() == 20);
         }
 
         [TestMethod]
         public void TestDomainUserAddAddress()
         {
-
             user.AddAddress(expectedAddress);
 
             var addressComparable = user.Addresses.ElementAt(0);
@@ -80,6 +79,12 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests
             user.RemoveAddress(expectedAddress);
 
             Assert.IsTrue(user.Addresses.Count() <= 0);
+        }
+
+        [TestMethod]
+        public void TestDomainUserIsValid()
+        {            
+            Assert.IsTrue(user.IsValid);
         }
 
         [TestCleanup]

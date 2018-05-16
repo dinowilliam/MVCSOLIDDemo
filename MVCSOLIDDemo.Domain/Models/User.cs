@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace MVCSOLIDDemo.Domain.Models {
+    using FluentValidator.Validation;
+    using MVCSOLIDDemo.Domain.Models.Contracts;
+    using MVCSOLIDDemo.Domain.Models.Validation;
+    using MVCSOLIDDemo.Domain.Models.Validation.Contracts;
 
-    using MVCSOLIDDemo.Domain.Models.Contracts;   
-
-    public class User : Agent, IUser  {
+    public class User : Agent, IUser {
       
         private const int DaysInAYear = 365;
 
@@ -21,9 +23,11 @@ namespace MVCSOLIDDemo.Domain.Models {
             DateOfBirth = dateOfBirth;
 
             SetAddresses(addresses);
+            ValidationContract = (IContract<User>) Activator.CreateInstance(typeof(UserContract), this);
         }
 
         internal User() {
+
         }       
 
         public string Name { get; set; }
@@ -95,6 +99,7 @@ namespace MVCSOLIDDemo.Domain.Models {
             }
 
         }
+                
 
     }
 }

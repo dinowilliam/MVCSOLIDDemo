@@ -8,7 +8,7 @@ namespace MVCSOLIDDemo.Domain.Models
     using MVCSOLIDDemo.Utils.Notification.Contracts;
     using System.Collections.Generic;
 
-    public abstract class BaseDomainModel : IBaseDomainModel
+    public abstract class BaseDomainModel : IBaseDomainModel  
     {
 
         public Guid Id { get; set; }
@@ -61,24 +61,31 @@ namespace MVCSOLIDDemo.Domain.Models
 
         }
 
+        protected IContract ValidationContract { get; set; }
+
         public INotification Notification { get; set; }
 
-        public bool IsValid { get; }
+        public bool IsValid => Validate(); 
 
-        private bool Validate(Type valContract) {
+        public bool Validate() {
+            bool isValid = false;
 
-            IContract validationContract = (IContract) Activator.CreateInstance(valContract, this);
-
-            if(!validationContract.Contract.Valid)
+            if(ValidationContract == null || ValidationContract.Contract == null)
             {
-                var listNotification = (IList<INotificationItem>) new List<NotificationItem>();
+                isValid = false;
+            }
+            else if(ValidationContract.Contract.Valid)
+            {
+                  isValid = true;
+            }
+            else if(!ValidationContract.Contract.Valid)
+            {
+                var listNotification = new List<INotificationItem>();
                 var notification = new Notification(listNotification);
 
-                foreach(var item in validationContract.Contract.Notifications)
-                {
+                foreach(var item in ValidationContract.Contract.Notifications) {
 
-                    var newNotification = new NotificationItem()
-                    {
+                    var newNotification = new NotificationItem() {
                         Message = item.Message,
                         Description = item.Property
                     };
@@ -86,9 +93,12 @@ namespace MVCSOLIDDemo.Domain.Models
                     notification.Notifications.Add(newNotification);
 
                 }
+
+                Notification = notification;
+
             }
 
-            return validationContract.Contract.Valid;
+            return isValid;
 
         }
 
