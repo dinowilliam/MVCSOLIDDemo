@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVCSOLIDDemo.Communications
+namespace MVCSOLIDDemo.IoC
 {
-    public class Class1
+    class DIContainerRegistration
     {
     }
 }

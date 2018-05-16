@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVCSOLIDDemo.IoC
+namespace MVCSOLIDDemo.Communications
 {
-    public class Class1
+    public class CommunicationsStartup
     {
     }
 }

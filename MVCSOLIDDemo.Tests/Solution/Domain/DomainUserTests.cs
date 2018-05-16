@@ -10,14 +10,16 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
     using MVCSOLIDDemo.Tests.Helpers.Domain;
 
     [TestClass]
-    public class DomainTests {
+    public class DomainUserTests {
 
         List<IAddress> listAddressFull;
         List<IAddress> listAddressEmpty;
         IAddress expectedAddress;
         IUser user;        
 
+        [TestInitialize]
         public void TestDomainUserInit() {  
+
             listAddressFull = (List<IAddress>) A.CollectionOfFake<IAddress>(20);
             listAddressEmpty = (List<IAddress>) A.CollectionOfFake<IAddress>(0);
             expectedAddress = UserTesterHelper.AddressExpected;        
@@ -33,17 +35,13 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
         }
 
         [TestMethod]
-        public void TestDomainUserPropertieAge() {
-
-            TestDomainUserInit();               
+        public void TestDomainUserPropertieAge() {            
 
             Assert.AreEqual(user.Age, UserTesterHelper.ExpectedAge);
         }
 
         [TestMethod]
-        public void TestDomainUserReadAddressList() {
-
-            TestDomainUserInit();               
+        public void TestDomainUserReadAddressList() {            
 
             A.CallTo(() => user.Addresses).Returns(listAddressFull);
 
@@ -51,9 +49,7 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
         }
        
         [TestMethod]
-        public void TestDomainUserAddAddress() {   
-            
-            TestDomainUserInit();
+        public void TestDomainUserAddAddress() {                          
            
             user.AddAddress(expectedAddress);
 
@@ -63,14 +59,17 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests {
         }
 
         [TestMethod]
-        public void TestDomainUserRemoveAddress() {           
-
-            TestDomainUserInit(); 
+        public void TestDomainUserRemoveAddress() {                       
 
             user.AddAddress(expectedAddress);
             user.RemoveAddress(expectedAddress);
             
             Assert.IsTrue(user.Addresses.Count()<=0);
+        }
+
+        [TestCleanup]
+        public void TestDomainUserCleanup() { 
+
         }
 
     }
