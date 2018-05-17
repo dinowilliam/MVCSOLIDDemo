@@ -40,14 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="InterfacesStartup.cs" />
     <Compile Include="Hubs\BaseServiceHub.cs" />
     <Compile Include="Hubs\Contracts\IBaseServiceHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Server\AppServer.cs" />
-    <Compile Include="Server\Contracts\IAppServer.cs" />
-    <Compile Include="Server\Contracts\IOrchestrator.cs" />
-    <Compile Include="Server\Orchestrator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

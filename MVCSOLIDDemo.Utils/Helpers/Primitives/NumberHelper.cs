@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVCSOLIDDemo.Interfaces
-{
-    public class Class1
-    {
+namespace MVCSOLIDDemo.Utils.Helpers.Primitives {
+    public static class NumberHelper {
     }
 }

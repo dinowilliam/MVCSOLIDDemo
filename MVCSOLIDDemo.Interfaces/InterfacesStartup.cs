@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVCSOLIDDemo.Application.Server.Contracts
+namespace MVCSOLIDDemo.Interfaces
 {
-    interface IAppServer
+    public class InterfacesStartup
     {
     }
 }

@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVCSOLIDDemo.Application.Server.Contracts
-{
-    interface IOrchestrator
-    {
+namespace MVCSOLIDDemo.Utils.Helpers.Primitives {
+    public static class StringHelper {
     }
 }

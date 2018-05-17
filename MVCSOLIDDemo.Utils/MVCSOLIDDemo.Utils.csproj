@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\IO\IOHelper.cs" />
+    <Compile Include="Helpers\Primitives\NumberHelper.cs" />
+    <Compile Include="Helpers\Primitives\SpaceTimeHelper.cs" />
+    <Compile Include="Helpers\Primitives\StringHelper.cs" />
     <Compile Include="Helpers\Web\WebHelper.cs" />
     <Compile Include="Helpers\WSC\WSCHelper.cs" />
     <Compile Include="Notification\Contracts\INotification.cs" />

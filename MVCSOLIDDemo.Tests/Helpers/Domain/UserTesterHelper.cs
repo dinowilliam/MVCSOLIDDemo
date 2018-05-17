@@ -50,7 +50,7 @@ namespace MVCSOLIDDemo.Tests.Helpers.Domain
             }
         }
 
-         public static ICity ExpectedCity {
+        public static ICity ExpectedCity {
             get { 
                  var city = A.Fake<City>(x => new City() {
                     Code = "000",  
