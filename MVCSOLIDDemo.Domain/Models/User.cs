@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace MVCSOLIDDemo.Domain.Models {
-    using FluentValidator.Validation;
     using MVCSOLIDDemo.Domain.Models.Contracts;
     using MVCSOLIDDemo.Domain.Models.Validation;
     using MVCSOLIDDemo.Domain.Models.Validation.Contracts;
@@ -13,25 +12,31 @@ namespace MVCSOLIDDemo.Domain.Models {
             
         private List<IAddress> _addresses;
 
-        public User(string name, string surname, string email, string password, string gender, DateTime? dateOfBirth, List<IAddress> addresses) : this() {
+        public User(string name, string surname, string username, string email, string password, string confirmPassword, string gender, DateTime? dateOfBirth, List<IAddress> addresses) : this() {
             Name = name;
             Surname = surname;
+            Username = username;
             Email = email;
-            Password = password;
+            Password = StringHelper.HashSHA512(password);
             Gender = gender;
             DateOfBirth = dateOfBirth;
 
             SetAddresses(addresses);
             ValidationContract = (IContract<User>) Activator.CreateInstance(typeof(UserContract), this);
+
+            ValidationContract.Contract.AreEquals(Password, StringHelper.HashSHA512(confirmPassword), "", "As senhas devem ser identicas");
+
         }
 
         internal User() {
-
+            ValidationContract = (IContract<User>)Activator.CreateInstance(typeof(UserContract), this);
         }       
 
         public string Name { get; set; }
 
         public string Surname { get; set; }
+
+        public string Username { get; set; }
 
         public string Email { get; set; }
 
@@ -98,7 +103,15 @@ namespace MVCSOLIDDemo.Domain.Models {
             }
 
         }
-                
+
+        public bool Authenticate(string username, string password) {
+            if (Username == username && Password == StringHelper.HashSHA512(password))
+                return true;
+
+            ValidationContract.Contract.AddNotification("User", "Usuário ou senha não parecem estar certos!");
+            return false;
+        }
+
 
     }
 }
