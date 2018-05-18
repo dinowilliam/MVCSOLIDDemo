@@ -15,6 +15,7 @@ namespace MVCSOLIDDemo.Utils.Notification {
 
         public bool Succeed { get; set; }
 
+
         public bool HasErrors {
             get {
                 return Notifications.Select(x => x.Type.Equals(NotificationType.Error)).Any();

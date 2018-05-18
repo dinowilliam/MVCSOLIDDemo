@@ -30,8 +30,10 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests
             user = A.Fake<User>(x => x.WithArgumentsForConstructor(() => new
                             User(UserTesterHelper.Name,
                                  UserTesterHelper.Surname,
+                                 UserTesterHelper.Username,
                                  UserTesterHelper.Email,
-                                 UserTesterHelper.Password,
+                                 UserTesterHelper.DecryptedPassword,
+                                 UserTesterHelper.DecryptedConfirmPasswordWrong,
                                  UserTesterHelper.Gender,
                                  UserTesterHelper.DateOfBirth,
                                  listAddressEmpty)
@@ -52,8 +54,10 @@ namespace MVCSOLIDDemo.Solution.Domain.Tests
             var userFullAddress = A.Fake<User>(x => x.WithArgumentsForConstructor(() => new
                                        User(UserTesterHelper.Name,
                                             UserTesterHelper.Surname,
+                                            UserTesterHelper.Username,
                                             UserTesterHelper.Email,
-                                            UserTesterHelper.Password,
+                                            UserTesterHelper.DecryptedPassword,
+                                            UserTesterHelper.DecryptedConfirmPasswordWrong,
                                             UserTesterHelper.Gender,
                                             UserTesterHelper.DateOfBirth,
                                             listAddressFull)

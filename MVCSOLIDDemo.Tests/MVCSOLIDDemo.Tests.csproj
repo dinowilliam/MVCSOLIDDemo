@@ -85,6 +85,10 @@
       <Project>{857C25C1-762F-4CEA-9118-9D44E6144B87}</Project>
       <Name>MVCSOLIDDemo.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MVCSOLIDDemo.Utils\MVCSOLIDDemo.Utils.csproj">
+      <Project>{77EAB618-D24D-43B8-AF8D-46109A6CDA9B}</Project>
+      <Name>MVCSOLIDDemo.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\xunit.analyzers.0.9.0\analyzers\dotnet\cs\xunit.analyzers.dll" />

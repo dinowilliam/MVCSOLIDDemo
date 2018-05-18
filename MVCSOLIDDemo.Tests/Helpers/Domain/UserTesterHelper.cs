@@ -5,13 +5,20 @@ namespace MVCSOLIDDemo.Tests.Helpers.Domain
     using FakeItEasy;
     using MVCSOLIDDemo.Domain.Models;
     using MVCSOLIDDemo.Domain.Models.Contracts;
+    using MVCSOLIDDemo.Utils.Helpers.Primitives;
 
     public static class UserTesterHelper {
 
         public static string Name { get { return "Fulano"; } }
         public static string Surname { get { return "Beltrano e Ciclano"; } }
+        public static string Username { get { return "fulano123"; } }
         public static string Email { get { return "fulano@internet.com"; } }
-        public static string Password { get { return "6512830FDF6336825E5202CE0BDD1677E6973A60AD85D258BF0ECC5F02280C98035732E6F32CD4261569C7A70E236397C7347463DAE53F593CB0A6E65F5134EA"; } }
+        public static string DecryptedPassword { get { return "Teste@123!"; } }
+        public static string DecryptedConfirmPasswordCorrect { get { return "Teste@123!"; } }
+        public static string DecryptedConfirmPasswordWrong { get { return "TesteErrado@321&"; } }
+        public static string EncryptedPassword { get { return StringHelper.HashSHA512("Teste@123!"); } }
+        public static string EncryptedConfirmPasswordCorrect { get { return StringHelper.HashSHA512("Teste@123!"); } }
+        public static string EncryptedConfirmPasswordWrong { get { return StringHelper.HashSHA512("TesteErrado@321&"); } }
         public static string Gender { get { return "Masculino"; } }
         public static DateTime DateOfBirth { get { return DateTime.Now.AddYears(AgeIncrement); } }
 
@@ -58,7 +65,7 @@ namespace MVCSOLIDDemo.Tests.Helpers.Domain
                   }
                 );
 
-                 city.SetSubdivision(ExpectedSubdivision);
+                city.SetSubdivision(ExpectedSubdivision);
 
                 return city;
             
