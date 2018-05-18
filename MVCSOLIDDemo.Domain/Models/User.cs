@@ -7,11 +7,10 @@ namespace MVCSOLIDDemo.Domain.Models {
     using MVCSOLIDDemo.Domain.Models.Contracts;
     using MVCSOLIDDemo.Domain.Models.Validation;
     using MVCSOLIDDemo.Domain.Models.Validation.Contracts;
+    using MVCSOLIDDemo.Utils.Helpers.Primitives;
 
     public class User : Agent, IUser {
-      
-        private const int DaysInAYear = 365;
-
+            
         private List<IAddress> _addresses;
 
         public User(string name, string surname, string email, string password, string gender, DateTime? dateOfBirth, List<IAddress> addresses) : this() {
@@ -46,7 +45,7 @@ namespace MVCSOLIDDemo.Domain.Models {
 
             get {
                 TimeSpan Period = DateTime.Now - DateOfBirth.Value;
-                return Period.Days/DaysInAYear;
+                return Period.Days/SpaceTimeHelper.DaysInThisYear;
             }
 
         }

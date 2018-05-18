@@ -16,7 +16,7 @@ namespace MVCSOLIDDemo.Utils.Helpers.Primitives
         {
             get
             {
-                return (new DateTime(DateTime.Now.Year, 1, 1) - new DateTime(DateTime.Now.Year + 1, 1, 1)).Days;
+                return (new DateTime(DateTime.Now.Year + 1, 1, 1) - new DateTime(DateTime.Now.Year, 1, 1)).Days;
 
             }
         }
@@ -25,7 +25,7 @@ namespace MVCSOLIDDemo.Utils.Helpers.Primitives
         {
             get
             {
-                return (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1) - new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1)).Days;
+                return (new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1) - new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).Days;
 
             }
         }
