@@ -67,7 +67,7 @@
     <Compile Include="Helpers\Domain\UserTesterHelper.cs" />
     <Compile Include="Solution\Application\InterfacesTests.cs" />
     <Compile Include="Solution\Application\ApplicationTests.cs" />
-    <Compile Include="Solution\CrossCutting\UtilsTests.cs" />
+    <Compile Include="Solution\CrossCutting\Utils\UtilsTestsStringHelper.cs" />
     <Compile Include="Solution\CrossCutting\ErrorHandlingTests.cs" />
     <Compile Include="Solution\CrossCutting\IoCTests.cs" />
     <Compile Include="Solution\CrossCutting\CommunicationsTests.cs" />
