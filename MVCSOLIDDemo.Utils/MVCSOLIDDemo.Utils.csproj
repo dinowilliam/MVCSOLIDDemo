@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Hashing\Tiger.cs" />
+    <Compile Include="Algorithms\Hashing\Whirlpool.cs" />
     <Compile Include="Helpers\IO\IOHelper.cs" />
     <Compile Include="Helpers\Primitives\NumberHelper.cs" />
     <Compile Include="Helpers\Primitives\SpaceTimeHelper.cs" />
@@ -52,6 +54,12 @@
     <Compile Include="Notification\Notification.cs" />
     <Compile Include="Notification\NotificationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Algorithms\Compression\" />
+    <Folder Include="Algorithms\Cryptography\" />
+    <Folder Include="Algorithms\Fractals\" />
+    <Folder Include="Algorithms\Wavelets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
