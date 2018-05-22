@@ -21,8 +21,7 @@ namespace MVCSOLIDDemo.Utils.Algorithms.Mathematics.Types {
 
         public static Complex operator +(Complex a, Complex b) {            
             return new Complex(a.Real + b.Real, a.Imaginary + b.Imaginary);;
-        }
-        
+        }        
        
         public static Complex operator -(Complex a, Complex b) {            
             return new Complex(a.Real - b.Real, a.Imaginary - b.Imaginary);;
@@ -31,8 +30,7 @@ namespace MVCSOLIDDemo.Utils.Algorithms.Mathematics.Types {
         public static Complex operator *(Complex a, Complex b) {            
             return new Complex((a.Real * b.Real) - (a.Imaginary * b.Imaginary), (a.Real * b.Imaginary + (a.Imaginary * b.Real)));
         }
-                             
-                
+                                             
         public static Complex FromPolarToRectangular(double r, double radians) {
             
             float real = (float) (r * Math.Cos(radians));
@@ -40,8 +38,7 @@ namespace MVCSOLIDDemo.Utils.Algorithms.Mathematics.Types {
 
             return new Complex(real, imaginary);
         }
-               
-      
+                     
         public float Magnitude {
             get {
                 return (float) Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
@@ -58,6 +55,7 @@ namespace MVCSOLIDDemo.Utils.Algorithms.Mathematics.Types {
 
             return Real.ToString() + " " + Imaginary.ToString() + "i";;
         }
+
     }
 
 }
