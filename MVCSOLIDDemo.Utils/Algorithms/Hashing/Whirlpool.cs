@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCSOLIDDemo.Utils.Algorithms.Hashing
 {
-    class Whirlpool
-    {
+    class Whirlpool {
+
     }
 }

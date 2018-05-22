@@ -47,6 +47,7 @@
     <Compile Include="Algorithms\Compression\ShannonFanoCoding.cs" />
     <Compile Include="Algorithms\Hashing\Tiger.cs" />
     <Compile Include="Algorithms\Hashing\Whirlpool.cs" />
+    <Compile Include="Algorithms\Mathematics\Types\Complex.cs" />
     <Compile Include="Helpers\IO\IOHelper.cs" />
     <Compile Include="Helpers\Primitives\NumberHelper.cs" />
     <Compile Include="Helpers\Primitives\SpaceTimeHelper.cs" />
@@ -64,7 +65,6 @@
     <Folder Include="Algorithms\Accounting\" />
     <Folder Include="Algorithms\Cryptography\" />
     <Folder Include="Algorithms\Fractals\" />
-    <Folder Include="Algorithms\Mathematics\" />
     <Folder Include="Algorithms\Wavelets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
