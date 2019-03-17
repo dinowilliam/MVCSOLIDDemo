@@ -1,0 +1,124 @@
+﻿@{
+                /**/
+
+                ViewBag.Title = "William Ferreira";
+}
+
+<div class="jumbotron">
+    <h1>Pesquisa Por CEP</h1>
+    <fieldset>
+        <div class="row">
+            <div class="col-xs-1">
+                @Html.Label("CEP", new { @class = "form-control" })
+            </div>
+            <div class="col-xs-3">
+                @Html.TextBox("txtCEP", "", new { @class = "form-control", placeholder = "CEP" })
+            </div>
+            <div class="col-xs-3">
+                <input id="btnPesquisar" type="submit" value="Pesquisar" class="btn btn-primary btn-md" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesCEP", "CEP:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblCEP", " ", new { @class = "form-control", id = "lblCEP" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesLogradouro", "Logradouro:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblLogradouro", " ", new { @class = "form-control", id = "lblLogradouro" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesComplemento", "Complemento:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblComplemento", " ", new { @class = "form-control", id = "lblComplemento" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesBairro", "Bairro:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblBairro", " ", new { @class = "form-control", id = "lblBairro" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesLocalidade", "Localidade:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblLocalidade", " ", new { @class = "form-control", id = "lblLocalidade" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesUF", "UF:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblUF", " ", new { @class = "form-control", id = "lblUF" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesUnidade", "Unidade:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblUnidade", " ", new { @class = "form-control", id = "lblUnidade" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesIBGE", "Código IBGE:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblIBGE", " ", new { @class = "form-control", id = "lblIBGE" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("lblDesGIA", "GIA:", new { @class = "form-control" })
+            </div>
+            <div class="col-md-10">
+                @Html.Label("lblGIA", " ", new { @class = "form-control", id = "lblGIA" })
+            </div>
+        </div>
+    </fieldset>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $('#txtCEP').inputmask('99999-999');
+
+            $('#btnPesquisar').click(function (event) {
+
+                var jsonViaCEP = 'https://viacep.com.br/ws/' + $('#txtCEP').val() + '/json'
+
+                $.getJSON(jsonViaCEP, function (data) {
+
+                    $("#lblCEP").text(data['cep']);
+                    $("#lblLogradouro").text(data['logradouro']);
+                    $("#lblComplemento").text(data['complemento']);
+                    $("#lblBairro").text(data['bairro']);
+                    $("#lblLocalidade").text(data['localidade']);
+                    $("#lblUF").text(data['uf']);
+                    $("#lblUnidade").text(data['unidade']);
+                    $("#lblIBGE").text(data['ibge']);
+                    $("#lblGIA").text(data['gia']);
+
+
+                });
+
+            });
+
+        });
+    </script>
+}
