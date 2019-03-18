@@ -16,7 +16,7 @@ namespace MVCSOLIDDemo.UI.Controllers {
         // GET: User
         public ActionResult Index() {
             //return View(UserManager.GetAll());
-            return View();
+            return View(new List<MVCSOLIDDemo.UI.Models.User>());
         }
 
         // GET: User/Details/5
