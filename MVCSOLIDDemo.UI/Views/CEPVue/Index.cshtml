@@ -4,90 +4,92 @@
 }
 
 <div class="container">
-    <h1>Pesquisa Por CEP</h1>
-    <fieldset>
-        <div class="form-row">
-            <div class="col-md-2">
-                @Html.Label("CEP")
+    <h1>Pesquisa Por CEP usando VueJS</h1>
+    <div id="appCep">
+        <fieldset>
+            <div class="form-row">
+                <div class="col-md-2">
+                    <label id="CEP" for="CEP"></label>
+                </div>
+                <div class="col-md-10 form-row">
+                    <input id="txtCEP" for="txtCEP" type="text" class="form-control" placeholder="CEP" />
+                    <input id="btnPesquisar" type="submit" value="Pesquisar" class="btn btn-primary btn-md" />
+                </div>
             </div>
-            <div class="col-md-10 form-row">
-                @Html.TextBox("txtCEP", "", new { @class = "form-control", placeholder = "CEP" })
-                <input id="btnPesquisar" type="submit" value="Pesquisar" class="btn btn-primary btn-md" />
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesCEP" for="lblDesCEP" value="CEP:" class="form-label"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblCEP" for="lblCEP" class="form-control"></label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesCEP", "CEP:", new { @class = "form-label" })
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesLogradouro" for="lblDesLogradouro" value="Logradouro:" class="form-control"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblLogradouro" for="lblLogradouro" class="form-control"></label>
+                </div>
             </div>
-            <div class="col-md-10">
-                @Html.Label("lblCEP", " ", new { @class = "form-control", id = "lblCEP" })
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesComplemento" for="lblDesComplemento" value="Complemento:" class="form-control"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblComplemento" for="lblComplemento" class="form-control" ></label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesLogradouro", "Logradouro:", new { @class = "form-control" })
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesBairro" for="lblDesBairro" value="Bairro:" class="form-control"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblBairro" for="lblBairro" class="form-control"></label>
+                </div>
             </div>
-            <div class="col-md-10">
-                @Html.Label("lblLogradouro", " ", new { @class = "form-control", id = "lblLogradouro" })
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesLocalidade" for="lblDesLocalidade" value="Localidade:" class="form-control"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblLocalidade" for="lblLocalidade"  class="form-control"></label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesComplemento", "Complemento:", new { @class = "form-control" })
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesUF" for="lblDesUF" valeu="UF:" class="form-control"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblUF" for="lblUF" class="form-control"></label>
+                </div>
             </div>
-            <div class="col-md-10">
-                @Html.Label("lblComplemento", " ", new { @class = "form-control", id = "lblComplemento" })
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesUnidade" for="lblDesUnidade" value="Unidade:" class="form-control"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblUnidade" for="lblUnidade" class="form-control"></label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesBairro", "Bairro:", new { @class = "form-control" })
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesIBGE" for="lblDesIBGE"  valeu="Código IBGE:" class="form-control"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblIBGE" for="lblIBGE" class="form-control"></label>
+                </div>
             </div>
-            <div class="col-md-10">
-                @Html.Label("lblBairro", " ", new { @class = "form-control", id = "lblBairro" })
+            <div class="row">
+                <div class="col-md-2">
+                    <label id="lblDesGIA" for="lblDesGIA" value="GIA:" class="form-control"></label>
+                </div>
+                <div class="col-md-10">
+                    <label id="lblGIA" for="lblGIA" class="form-control"></label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesLocalidade", "Localidade:", new { @class = "form-control" })
-            </div>
-            <div class="col-md-10">
-                @Html.Label("lblLocalidade", " ", new { @class = "form-control", id = "lblLocalidade" })
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesUF", "UF:", new { @class = "form-control" })
-            </div>
-            <div class="col-md-10">
-                @Html.Label("lblUF", " ", new { @class = "form-control", id = "lblUF" })
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesUnidade", "Unidade:", new { @class = "form-control" })
-            </div>
-            <div class="col-md-10">
-                @Html.Label("lblUnidade", " ", new { @class = "form-control", id = "lblUnidade" })
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesIBGE", "Código IBGE:", new { @class = "form-control" })
-            </div>
-            <div class="col-md-10">
-                @Html.Label("lblIBGE", " ", new { @class = "form-control", id = "lblIBGE" })
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                @Html.Label("lblDesGIA", "GIA:", new { @class = "form-control" })
-            </div>
-            <div class="col-md-10">
-                @Html.Label("lblGIA", " ", new { @class = "form-control", id = "lblGIA" })
-            </div>
-        </div>
-    </fieldset>
+        </fieldset>
+    </div>
 </div>
 @section Scripts {
     <script src="~/Scripts/vue.js"></script>
