@@ -13,79 +13,79 @@
                 </div>
                 <div class="col-md-10 form-row">
                     <input id="txtCEP" for="txtCEP" type="text" class="form-control" placeholder="CEP" />
-                    <input id="btnPesquisar" type="submit" value="Pesquisar" class="btn btn-primary btn-md" />
+                    <button id="btnPesquisar" class="btn btn-primary btn-md" v-on:click="consultarCep">Pesquisar</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesCEP" for="lblDesCEP" value="CEP:" class="form-label"></label>
+                    <label id="lblDesCEP" for="lblDesCEP" class="form-control">CEP:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblCEP" for="lblCEP" class="form-control"></label>
+                    <label id="lblCEP" for="lblCEP" class="form-control">{{cep}}</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesLogradouro" for="lblDesLogradouro" value="Logradouro:" class="form-control"></label>
+                    <label id="lblDesLogradouro" for="lblDesLogradouro" class="form-control">Logradouro:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblLogradouro" for="lblLogradouro" class="form-control"></label>
+                    <label id="lblLogradouro" for="lblLogradouro" class="form-control">{{logradouro}}</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesComplemento" for="lblDesComplemento" value="Complemento:" class="form-control"></label>
+                    <label id="lblDesComplemento" for="lblDesComplemento" class="form-control">Complemento:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblComplemento" for="lblComplemento" class="form-control" ></label>
+                    <label id="lblComplemento" for="lblComplemento" class="form-control">{{ complemento }}</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesBairro" for="lblDesBairro" value="Bairro:" class="form-control"></label>
+                    <label id="lblDesBairro" for="lblDesBairro" class="form-control">Bairro:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblBairro" for="lblBairro" class="form-control"></label>
+                    <label id="lblBairro" for="lblBairro" class="form-control">{{ bairro }}</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesLocalidade" for="lblDesLocalidade" value="Localidade:" class="form-control"></label>
+                    <label id="lblDesLocalidade" for="lblDesLocalidade" class="form-control">Localidade:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblLocalidade" for="lblLocalidade"  class="form-control"></label>
+                    <label id="lblLocalidade" for="lblLocalidade" class="form-control">{{ localidade }}</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesUF" for="lblDesUF" valeu="UF:" class="form-control"></label>
+                    <label id="lblDesUF" for="lblDesUF" class="form-control">UF:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblUF" for="lblUF" class="form-control"></label>
+                    <label id="lblUF" for="lblUF" class="form-control">{{ uf }}</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesUnidade" for="lblDesUnidade" value="Unidade:" class="form-control"></label>
+                    <label id="lblDesUnidade" for="lblDesUnidade" class="form-control">Unidade:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblUnidade" for="lblUnidade" class="form-control"></label>
+                    <label id="lblUnidade" for="lblUnidade" class="form-control">{{ unidade }}</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesIBGE" for="lblDesIBGE"  valeu="Código IBGE:" class="form-control"></label>
+                    <label id="lblDesIBGE" for="lblDesIBGE" class="form-control">Código IBGE:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblIBGE" for="lblIBGE" class="form-control"></label>
+                    <label id="lblIBGE" for="lblIBGE" class="form-control">{{ ibge }}</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <label id="lblDesGIA" for="lblDesGIA" value="GIA:" class="form-control"></label>
+                    <label id="lblDesGIA" for="lblDesGIA" class="form-control">GIA:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblGIA" for="lblGIA" class="form-control"></label>
+                    <label id="lblGIA" for="lblGIA" class="form-control">{{ gia }}</label>
                 </div>
             </div>
         </fieldset>
