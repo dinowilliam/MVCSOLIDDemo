@@ -6,22 +6,22 @@
 <div class="container">
     <h1>Pesquisa Por CEP usando VueJS</h1>
     <div id="appCep">
-        <fieldset>
-            <div class="form-row">
-                <div class="col-md-2">
-                    <label id="CEP" for="CEP"></label>
-                </div>
-                <div class="col-md-10 form-row">
-                    <input id="txtCEP" for="txtCEP" type="text" class="form-control" placeholder="CEP" />
-                    <button id="btnPesquisar" class="btn btn-primary btn-md" v-on:click="consultarCep">Pesquisar</button>
-                </div>
+        <div class="row">
+            <div class="col-md-2 row">
+                <label id="CEP" for="CEP">Pesquisa CEP</label>
             </div>
+            <div class="col-md-10 row">
+                <input id="txtCEP" for="txtCEP" type="text" class="form-control" placeholder="CEP" />
+                <button id="btnPesquisar" class="btn btn-primary btn-md" v-on:click="consultarCep">Pesquisar</button>
+            </div>            
+        </div>
+        <fieldset>
             <div class="row">
                 <div class="col-md-2">
                     <label id="lblDesCEP" for="lblDesCEP" class="form-control">CEP:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblCEP" for="lblCEP" class="form-control">{{cep}}</label>
+                    <label id="lblCEP" for="lblCEP" class="form-control">{{ data.cep }}</label>
                 </div>
             </div>
             <div class="row">
@@ -29,7 +29,7 @@
                     <label id="lblDesLogradouro" for="lblDesLogradouro" class="form-control">Logradouro:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblLogradouro" for="lblLogradouro" class="form-control">{{logradouro}}</label>
+                    <label id="lblLogradouro" for="lblLogradouro" class="form-control">{{ data.logradouro}}</label>
                 </div>
             </div>
             <div class="row">
@@ -37,7 +37,7 @@
                     <label id="lblDesComplemento" for="lblDesComplemento" class="form-control">Complemento:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblComplemento" for="lblComplemento" class="form-control">{{ complemento }}</label>
+                    <label id="lblComplemento" for="lblComplemento" class="form-control">{{ data.complemento }}</label>
                 </div>
             </div>
             <div class="row">
@@ -45,7 +45,7 @@
                     <label id="lblDesBairro" for="lblDesBairro" class="form-control">Bairro:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblBairro" for="lblBairro" class="form-control">{{ bairro }}</label>
+                    <label id="lblBairro" for="lblBairro" class="form-control">{{ data.bairro }}</label>
                 </div>
             </div>
             <div class="row">
@@ -53,7 +53,7 @@
                     <label id="lblDesLocalidade" for="lblDesLocalidade" class="form-control">Localidade:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblLocalidade" for="lblLocalidade" class="form-control">{{ localidade }}</label>
+                    <label id="lblLocalidade" for="lblLocalidade" class="form-control">{{ data.localidade }}</label>
                 </div>
             </div>
             <div class="row">
@@ -61,7 +61,7 @@
                     <label id="lblDesUF" for="lblDesUF" class="form-control">UF:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblUF" for="lblUF" class="form-control">{{ uf }}</label>
+                    <label id="lblUF" for="lblUF" class="form-control">{{ data.uf }}</label>
                 </div>
             </div>
             <div class="row">
@@ -69,7 +69,7 @@
                     <label id="lblDesUnidade" for="lblDesUnidade" class="form-control">Unidade:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblUnidade" for="lblUnidade" class="form-control">{{ unidade }}</label>
+                    <label id="lblUnidade" for="lblUnidade" class="form-control">{{ data.unidade }}</label>
                 </div>
             </div>
             <div class="row">
@@ -77,7 +77,7 @@
                     <label id="lblDesIBGE" for="lblDesIBGE" class="form-control">Código IBGE:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblIBGE" for="lblIBGE" class="form-control">{{ ibge }}</label>
+                    <label id="lblIBGE" for="lblIBGE" class="form-control">{{ data.ibge }}</label>
                 </div>
             </div>
             <div class="row">
@@ -85,13 +85,16 @@
                     <label id="lblDesGIA" for="lblDesGIA" class="form-control">GIA:</label>
                 </div>
                 <div class="col-md-10">
-                    <label id="lblGIA" for="lblGIA" class="form-control">{{ gia }}</label>
+                    <label id="lblGIA" for="lblGIA" class="form-control">{{ data.gia }}</label>
                 </div>
             </div>
         </fieldset>
     </div>
 </div>
 @section Scripts {
-    <script src="~/Scripts/vue.js"></script>
+    <script src="~/Scripts/axios.js"></script>
+    <script type="text/javascript" src="~/Scripts/vue.js"></script>
+
+
     <script src="~/Scripts/CEPVue/CEPVue.js"></script>
 }

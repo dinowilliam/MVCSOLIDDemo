@@ -1,15 +1,19 @@
 ﻿var cepVue = new Vue({
     el: '#appCep',
-    data: {
-        cep: '',
-        logradouro: '',
-        complemento: '',
-        bairro: '',
-        localidade: '',
-        uf: '',
-        unidade: '',
-        ibge: '',
-        gia: ''
+    data() {
+        return {
+            data: {
+                cep: '',
+                logradouro: '',
+                complemento: '',
+                bairro: '',
+                localidade: '',
+                uf: '',
+                unidade: '',
+                ibge: '',
+                gia: ''
+            }
+        }
     },
     methods: {
         consultarCep: function () {
@@ -17,7 +21,7 @@
 
             axios
                 .get(jsonViaCEP)
-                .then(response => (this.data = response));                          
+                .then(response => (this.data = response.data));                          
 
         }
     }
