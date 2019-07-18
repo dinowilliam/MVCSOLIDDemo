@@ -1,5 +1,6 @@
 ﻿var cepVue = new Vue({
     el: '#appCep',
+   
     data() {
         return {
             data: {
@@ -22,7 +23,6 @@
             axios
                 .get(jsonViaCEP)
                 .then(response => (this.data = response.data));                          
-
         }
     }
 

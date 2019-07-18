@@ -25,7 +25,6 @@ namespace MVCSOLIDDemo.Domain.Models {
             ValidationContract = (IContract<User>) Activator.CreateInstance(typeof(UserContract), this);
 
             ValidationContract.Contract.AreEquals(Password, StringHelper.HashSHA512(confirmPassword), "", "As senhas devem ser identicas");
-
         }
 
         internal User() {
@@ -111,7 +110,6 @@ namespace MVCSOLIDDemo.Domain.Models {
             ValidationContract.Contract.AddNotification("User", "Usuário ou senha não parecem estar certos!");
             return false;
         }
-
 
     }
 }
